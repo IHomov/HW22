@@ -16,20 +16,24 @@
     <div class="container mt-5">
         <h1 class="mb-4 m-auto text-center">Индекс массы тела</h1>
         <!-- Input Data Form -->
-        <div class="row row-cols-1 row-cols-lg-4 my-4 justify-content-center">
-            <form class="p-3 mb-2 bg-secondary text-white rounded-1">
+        <div class="row row-cols-1 row-cols-lg-3 my-4 justify-content-center">
+            <form class="p-3 mb-2 bg-secondary text-white rounded-1 h-100">
                 <div class="mb-3 ">
                     <label for="exampleInputText1" class="form-label">Ваш рост (м): </label>
-                    <input type="number" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text text-black-50">
+                    <input type="number" class="form-control" id="exampleInputText1" min="0" max="4" step='0.01'>
+                    <div id="textHelp" class="form-text text-black-50">
                         Обратите внимание, рост нужно ввести в метрах!
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputText2" class="form-label">Ваш вес (кг): </label>
-                    <input type="number" class="form-control" id="exampleInputText2">
+                    <input type="number" class="form-control" id="exampleInputText2" min="0" max="400" step='0.01'>
                 </div>
-                <button type="submit" class="btn   btn-light">Рассчитать</button>
+                <button onclick="calculation()" type="button" class="btn btn-light w-100">Рассчитать</button>
+
+                <!-- /output Data Form -->
+				
+		<h3 class='my-4 mt-3 mb-5'>Индекс вашего тела: <output  id="resultPlace"></output> </h3>
             </form>
         </div>
     </div>
